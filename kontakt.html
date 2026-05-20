@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kontakt — Tischlerei Kosiek Lemgo</title>
+  <meta name="description" content="So erreichen Sie die Tischlerei Carsten Kosiek in Lemgo: Telefon 05261 71482, Flinkenhaspel 7, 32657 Lemgo.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Lora:wght@400;500;600&family=Cormorant+Garamond:ital,wght@1,400;1,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a href="index.html" class="logo">
+      <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <rect x="2" y="2" width="36" height="36" rx="2" fill="none" stroke="#8b5a2b" stroke-width="2"/>
+        <text x="20" y="27" text-anchor="middle" font-family="Playfair Display, serif" font-size="20" font-weight="700" fill="#2d1f15">CK</text>
+      </svg>
+      <span>Tischlerei Kosiek</span>
+    </a>
+    <button class="menu-toggle" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="index.html">Start</a></li>
+        <li><a href="leistungen.html">Leistungen</a></li>
+        <li><a href="ueber-uns.html">Über uns</a></li>
+        <li><a href="galerie.html">Galerie</a></li>
+        <li><a href="kontakt.html" class="active">Kontakt</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<section class="page-header">
+  <div class="container">
+    <h1>Kontakt</h1>
+    <p>Schreiben Sie uns oder rufen Sie an — wir melden uns zeitnah zurück.</p>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="contact-grid">
+
+      <div class="contact-info">
+        <h2 style="margin-bottom:var(--space-md);">So erreichen Sie uns</h2>
+
+        <p>
+          <span class="label">Adresse</span>
+          <span class="value">Flinkenhaspel 7<br>32657 Lemgo (Trophagen)</span>
+        </p>
+
+        <p>
+          <span class="label">Telefon</span>
+          <a href="tel:0526171482" class="value big">05261 71482</a>
+        </p>
+
+        <p>
+          <span class="label">Fax</span>
+          <span class="value">05261 78973</span>
+        </p>
+
+        <p>
+          <span class="label">E-Mail</span>
+          <a href="mailto:bautischlerei-kosiek@t-online.de" class="value">bautischlerei-kosiek@t-online.de</a>
+        </p>
+
+        <p style="margin-top:var(--space-md);">
+          <span class="label">Öffnungszeiten</span>
+          <span class="value">Mo–Fr: 7:00 – 17:00<br>Sa: nach Vereinbarung</span>
+        </p>
+      </div>
+
+      <div>
+        <h2 style="margin-bottom:var(--space-md);">Anfrage senden</h2>
+        <!-- Für echte Nutzung: action durch Formspree-URL ersetzen, z.B. https://formspree.io/f/xyz -->
+        <form class="contact-form" action="mailto:bautischlerei-kosiek@t-online.de" method="post" enctype="text/plain">
+          <label>
+            Name
+            <input type="text" name="name" required>
+          </label>
+          <label>
+            E-Mail
+            <input type="email" name="email" required>
+          </label>
+          <label>
+            Telefon (optional)
+            <input type="tel" name="telefon">
+          </label>
+          <label>
+            Ihre Anfrage
+            <textarea name="nachricht" required></textarea>
+          </label>
+          <button type="submit" class="btn">Anfrage senden</button>
+        </form>
+      </div>
+
+    </div>
+
+    <div class="map-wrap">
+      <iframe
+        src="https://www.openstreetmap.org/export/embed.html?bbox=8.880%2C52.020%2C8.940%2C52.060&layer=mapnik&marker=52.04%2C8.91"
+        title="Karte mit Standort der Tischlerei Kosiek in Lemgo"
+        loading="lazy">
+      </iframe>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div>
+      <h4>Tischlerei Kosiek</h4>
+      <p>Flinkenhaspel 7<br>32657 Lemgo</p>
+      <p><a href="tel:0526171482">05261 71482</a></p>
+      <p><a href="mailto:bautischlerei-kosiek@t-online.de">bautischlerei-kosiek@t-online.de</a></p>
+    </div>
+    <div>
+      <h4>Navigation</h4>
+      <ul>
+        <li><a href="index.html">Start</a></li>
+        <li><a href="leistungen.html">Leistungen</a></li>
+        <li><a href="ueber-uns.html">Über uns</a></li>
+        <li><a href="galerie.html">Galerie</a></li>
+        <li><a href="kontakt.html">Kontakt</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Öffnungszeiten</h4>
+      <p>Mo–Fr: 7:00 – 17:00<br>Sa: nach Vereinbarung</p>
+    </div>
+  </div>
+  <div class="container">
+    <p class="demo-disclaimer">
+      Unverbindlicher Entwurf zur Demonstration — kein offizielles Angebot der Tischlerei Kosiek.
+      Erstellt von M. Kunau, Kontakt: <a href="mailto:m.kunau@gmx.de">m.kunau@gmx.de</a>.
+    </p>
+  </div>
+</footer>
+<script src="js/main.js" defer></script>
+</body>
+</html>
