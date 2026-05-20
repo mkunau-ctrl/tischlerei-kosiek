@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Galerie — Tischlerei Kosiek Lemgo</title>
+  <meta name="description" content="Einblicke in unsere Arbeit: Möbel, Treppen, Türen, Böden — Projekte der Tischlerei Carsten Kosiek aus Lemgo.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Lora:wght@400;500;600&family=Cormorant+Garamond:ital,wght@1,400;1,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a href="index.html" class="logo">
+      <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <rect x="2" y="2" width="36" height="36" rx="2" fill="none" stroke="#8b5a2b" stroke-width="2"/>
+        <text x="20" y="27" text-anchor="middle" font-family="Playfair Display, serif" font-size="20" font-weight="700" fill="#2d1f15">CK</text>
+      </svg>
+      <span>Tischlerei Kosiek</span>
+    </a>
+    <button class="menu-toggle" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="index.html">Start</a></li>
+        <li><a href="leistungen.html">Leistungen</a></li>
+        <li><a href="ueber-uns.html">Über uns</a></li>
+        <li><a href="galerie.html" class="active">Galerie</a></li>
+        <li><a href="kontakt.html">Kontakt</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<section class="page-header">
+  <div class="container">
+    <h1>Galerie</h1>
+    <p>Eine Auswahl aus unserer Arbeit — vom Detail zur Gesamtkonzeption.</p>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="gallery-filter">
+      <button class="filter-btn active" data-category="all">Alle</button>
+      <button class="filter-btn" data-category="moebel">Möbel</button>
+      <button class="filter-btn" data-category="treppen">Treppen</button>
+      <button class="filter-btn" data-category="tueren">Türen</button>
+      <button class="filter-btn" data-category="boeden">Böden</button>
+    </div>
+
+    <div class="gallery-grid">
+      <div class="gallery-item" data-category="moebel"><img src="https://images.unsplash.com/photo-1538688525198-9b88f6f53126?auto=format&fit=crop&w=800&q=70" alt="Einbauschrank"></div>
+      <div class="gallery-item" data-category="treppen"><img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=800&q=70" alt="Holztreppe"></div>
+      <div class="gallery-item" data-category="tueren"><img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=800&q=70" alt="Eingangstür"></div>
+      <div class="gallery-item" data-category="boeden"><img src="https://images.unsplash.com/photo-1581094271901-8022df4466f9?auto=format&fit=crop&w=800&q=70" alt="Parkettboden"></div>
+      <div class="gallery-item" data-category="moebel"><img src="https://images.unsplash.com/photo-1583845112203-29329902332e?auto=format&fit=crop&w=800&q=70" alt="Tisch"></div>
+      <div class="gallery-item" data-category="treppen"><img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=70" alt="Innentreppe"></div>
+      <div class="gallery-item" data-category="tueren"><img src="https://images.unsplash.com/photo-1517414204284-fb7e0e0f3a64?auto=format&fit=crop&w=800&q=70" alt="Innentür"></div>
+      <div class="gallery-item" data-category="boeden"><img src="https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?auto=format&fit=crop&w=800&q=70" alt="Dielenboden"></div>
+      <div class="gallery-item" data-category="moebel"><img src="https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=800&q=70" alt="Regal"></div>
+      <div class="gallery-item" data-category="moebel"><img src="https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?auto=format&fit=crop&w=800&q=70" alt="Sideboard"></div>
+      <div class="gallery-item" data-category="treppen"><img src="https://images.unsplash.com/photo-1572883454114-1cf0031ede2a?auto=format&fit=crop&w=800&q=70" alt="Gewendelte Treppe"></div>
+      <div class="gallery-item" data-category="boeden"><img src="https://images.unsplash.com/photo-1503594384566-461fe158e797?auto=format&fit=crop&w=800&q=70" alt="Holzboden Werkstatt"></div>
+    </div>
+  </div>
+</section>
+
+<div class="lightbox" role="dialog" aria-modal="true" aria-label="Bildvergrößerung">
+  <button class="lb-close" aria-label="Schließen">×</button>
+  <button class="lb-prev" aria-label="Vorheriges">‹</button>
+  <img src="" alt="">
+  <button class="lb-next" aria-label="Nächstes">›</button>
+</div>
+
+<footer class="site-footer">
+  <div class="container">
+    <div>
+      <h4>Tischlerei Kosiek</h4>
+      <p>Flinkenhaspel 7<br>32657 Lemgo</p>
+      <p><a href="tel:0526171482">05261 71482</a></p>
+      <p><a href="mailto:bautischlerei-kosiek@t-online.de">bautischlerei-kosiek@t-online.de</a></p>
+    </div>
+    <div>
+      <h4>Navigation</h4>
+      <ul>
+        <li><a href="index.html">Start</a></li>
+        <li><a href="leistungen.html">Leistungen</a></li>
+        <li><a href="ueber-uns.html">Über uns</a></li>
+        <li><a href="galerie.html">Galerie</a></li>
+        <li><a href="kontakt.html">Kontakt</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Öffnungszeiten</h4>
+      <p>Mo–Fr: 7:00 – 17:00<br>Sa: nach Vereinbarung</p>
+    </div>
+  </div>
+  <div class="container">
+    <p class="demo-disclaimer">
+      Unverbindlicher Entwurf zur Demonstration — kein offizielles Angebot der Tischlerei Kosiek.
+      Erstellt von M. Kunau, Kontakt: <a href="mailto:m.kunau@gmx.de">m.kunau@gmx.de</a>.
+    </p>
+  </div>
+</footer>
+<script src="js/main.js" defer></script>
+</body>
+</html>
