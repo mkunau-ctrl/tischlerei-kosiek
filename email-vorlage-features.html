@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>E-Mail-Vorlage — Follow-up: Was Ihr Webauftritt für Sie verkauft</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Lora:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --c-text:  #2d1f15;
+      --c-wood:  #8b5a2b;
+      --c-wood-light: #c9a87a;
+      --c-cream: #f5ede0;
+      --c-bg:    #ece8df;
+      --c-paper: #fff;
+      --c-highlight: #faf6ee;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      padding: 40px 16px 80px;
+      background: var(--c-bg);
+      font-family: 'Lora', Georgia, serif;
+      color: var(--c-text);
+      line-height: 1.7;
+    }
+    .doc-header {
+      max-width: 760px;
+      margin: 0 auto 24px;
+      text-align: center;
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-style: italic;
+      color: #6b554a;
+      font-size: 1.05rem;
+    }
+    .email {
+      max-width: 760px;
+      margin: 0 auto;
+      background: var(--c-paper);
+      border: 2px solid var(--c-text);
+      box-shadow: 10px 10px 0 var(--c-wood);
+    }
+    .email__meta {
+      background: var(--c-text);
+      color: var(--c-cream);
+      padding: 1.25rem 2rem;
+      font-size: 0.92rem;
+      font-family: 'Lora', monospace, serif;
+      border-bottom: 2px solid var(--c-text);
+    }
+    .email__meta-row { margin-bottom: 0.3rem; display: flex; gap: 0.75rem; }
+    .email__meta-row:last-child { margin-bottom: 0; }
+    .email__meta-label {
+      color: var(--c-wood-light);
+      flex: 0 0 64px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-size: 0.78rem;
+      padding-top: 4px;
+    }
+    .email__meta-value { flex: 1; word-break: break-word; }
+    .email__body { padding: 2.5rem 2.5rem 2rem; }
+    .email__body p { margin: 0 0 1rem; }
+    .email__hook {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--c-text);
+      line-height: 1.35;
+      margin: 0 0 1.25rem;
+      padding-left: 1rem;
+      border-left: 4px solid var(--c-wood);
+    }
+    .email__h {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.3rem;
+      margin: 2rem 0 0.5rem;
+      color: var(--c-text);
+      padding-bottom: 0.4rem;
+      border-bottom: 2px solid var(--c-wood-light);
+    }
+    .email__h-sub {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-style: italic;
+      color: #6b554a;
+      margin: 0 0 1rem;
+      font-size: 1rem;
+    }
+    .demo-link {
+      display: inline-block;
+      background: var(--c-wood);
+      color: #fff;
+      padding: 0.85rem 1.75rem;
+      text-decoration: none;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      border: 2px solid var(--c-text);
+      box-shadow: 4px 4px 0 var(--c-text);
+      margin: 0.5rem 0 1.5rem;
+      transition: transform .2s, box-shadow .2s;
+    }
+    .demo-link:hover {
+      transform: translate(-2px, -2px);
+      box-shadow: 6px 6px 0 var(--c-text);
+    }
+    .feature {
+      background: var(--c-highlight);
+      border: 2px solid var(--c-wood-light);
+      box-shadow: 4px 4px 0 var(--c-wood);
+      padding: 1.25rem 1.5rem;
+      margin: 0 0 1.25rem;
+    }
+    .feature__title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: var(--c-text);
+      margin: 0 0 0.4rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .feature__badge {
+      display: inline-block;
+      background: var(--c-wood);
+      color: #fff;
+      font-family: 'Lora', sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.18rem 0.55rem;
+      border: 2px solid var(--c-text);
+    }
+    .feature__why {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-style: italic;
+      color: #6b554a;
+      font-size: 0.98rem;
+      margin: 0.5rem 0 0;
+      padding-top: 0.5rem;
+      border-top: 1px dashed var(--c-wood-light);
+    }
+    .feature__why strong { color: var(--c-wood); font-style: normal; }
+    ul.bullets-tight {
+      margin: 0;
+      padding-left: 1.25rem;
+      font-size: 0.97rem;
+    }
+    ul.bullets-tight li { margin-bottom: 0.25rem; }
+    .pricing {
+      margin: 1.25rem 0 1.5rem;
+      border: 2px solid var(--c-text);
+      box-shadow: 4px 4px 0 var(--c-wood);
+    }
+    .pricing-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      padding: 0.8rem 1.25rem;
+      border-bottom: 1px solid var(--c-wood-light);
+      gap: 1rem;
+    }
+    .pricing-row:last-child { border-bottom: 0; }
+    .pricing-row.highlight {
+      background: var(--c-cream);
+      font-weight: 700;
+      border-top: 2px solid var(--c-text);
+    }
+    .pricing-row__label { flex: 1; }
+    .pricing-row__price {
+      color: var(--c-wood);
+      font-weight: 600;
+      white-space: nowrap;
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.05rem;
+    }
+    .savings {
+      background: var(--c-text);
+      color: var(--c-cream);
+      padding: 1rem 1.25rem;
+      margin: 1rem 0 1.5rem;
+      border: 2px solid var(--c-text);
+      box-shadow: 4px 4px 0 var(--c-wood);
+    }
+    .savings__row {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 0.25rem 0;
+    }
+    .savings__row strong { color: var(--c-wood-light); }
+    .savings__big {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.5rem;
+      color: #fff;
+      margin-top: 0.5rem;
+      padding-top: 0.5rem;
+      border-top: 2px solid var(--c-wood);
+      text-align: center;
+    }
+    .disclaimer {
+      background: #fefdf9;
+      border: 2px dashed var(--c-wood-light);
+      padding: 1rem 1.25rem;
+      margin: 1.5rem 0;
+      font-size: 0.95rem;
+      color: #4a3a2f;
+    }
+    .disclaimer strong { color: var(--c-text); }
+    .cta-row {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      margin: 1.5rem 0 0.5rem;
+    }
+    .cta-row .demo-link { margin: 0; }
+    .cta-row .demo-link--alt {
+      background: transparent;
+      color: var(--c-wood);
+    }
+    .cta-row .demo-link--alt:hover { background: var(--c-cream); }
+    .scarcity {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-style: italic;
+      color: var(--c-wood);
+      font-size: 1.05rem;
+      margin: 0.5rem 0 0;
+    }
+    .signature {
+      margin-top: 2rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--c-wood-light);
+      color: #4a3a2f;
+      font-size: 0.95rem;
+    }
+    .signature__name {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.2rem;
+      color: var(--c-text);
+      display: block;
+      margin-bottom: 0.25rem;
+    }
+    .signature a { color: var(--c-wood); }
+    @media (max-width: 640px) {
+      body { padding: 20px 12px 40px; }
+      .email__body { padding: 1.75rem 1.25rem 1.5rem; }
+      .email__meta { padding: 1rem 1.25rem; font-size: 0.85rem; }
+      .pricing-row { flex-direction: column; gap: 0.25rem; }
+      .pricing-row__price { font-size: 1rem; }
+      .savings__row { flex-direction: column; gap: 0; }
+    }
+  </style>
+</head>
+<body>
+
+<p class="doc-header">Vorlage 2 — Marketing-Follow-up nach Erstkontakt. Frei in jedem E-Mail-Client kopierbar.</p>
+
+<article class="email">
+  <header class="email__meta">
+    <div class="email__meta-row">
+      <span class="email__meta-label">An</span>
+      <span class="email__meta-value">bautischlerei-kosiek@t-online.de</span>
+    </div>
+    <div class="email__meta-row">
+      <span class="email__meta-label">Von</span>
+      <span class="email__meta-value">m.kunau@gmx.de</span>
+    </div>
+    <div class="email__meta-row">
+      <span class="email__meta-label">Betreff</span>
+      <span class="email__meta-value">Drei Bausteine, die Ihre Website zum Verkaufen bringen — kurze Erweiterung zu meinem Vorschlag</span>
+    </div>
+  </header>
+
+  <div class="email__body">
+
+    <p>Sehr geehrter Herr Kosiek,</p>
+
+    <p class="email__hook">
+      Eine schöne Website reicht nicht — sie muss Aufträge bringen.
+      Deshalb habe ich Ihrem Entwurf drei Bereiche hinzugefügt, die nachweislich
+      Vertrauen aufbauen und aus Besuchern Anrufer machen.
+    </p>
+
+    <p>Schauen Sie sich die neue Version gern direkt an:</p>
+
+    <p>
+      <a class="demo-link" href="https://tischlerei-kosiek.vercel.app">
+        Aktualisierten Entwurf ansehen →
+      </a>
+    </p>
+
+    <h2 class="email__h">Was neu ist — und warum es Ihnen Geld bringt</h2>
+    <p class="email__h-sub">Jeder Baustein verfolgt ein konkretes Marketing-Ziel.</p>
+
+    <div class="feature">
+      <p class="feature__title"><span class="feature__badge">Baustein 01</span> Vertrauens­zahlen auf der Startseite</p>
+      <p style="margin:0 0 0.5rem;">Vier prominent platzierte Statistiken:</p>
+      <ul class="bullets-tight">
+        <li><strong>30+ Jahre</strong> Bautischler-Tradition</li>
+        <li><strong>500+</strong> realisierte Projekte</li>
+        <li><strong>2.400 m²</strong> Holzboden verlegt</li>
+        <li><strong>5,0 Sterne</strong> Kundenbewertung</li>
+      </ul>
+      <p class="feature__why">
+        <strong>Warum:</strong> Interessenten entscheiden in den ersten fünf Sekunden,
+        ob sie weiter scrollen. Konkrete Zahlen geben sofort Sicherheit — schon
+        bevor jemand Ihre Texte gelesen hat.
+      </p>
+    </div>
+
+    <div class="feature">
+      <p class="feature__title"><span class="feature__badge">Baustein 02</span> Vier echte Referenzprojekte</p>
+      <p style="margin:0 0 0.5rem;">Mit Bild, Ort und Kurzbeschreibung:</p>
+      <ul class="bullets-tight">
+        <li>Eichentreppe für ein Einfamilienhaus in Detmold</li>
+        <li>Einbauküche im Fachwerkhaus, Lemgo Altstadt</li>
+        <li>Haustür-Sanierung mit Sicherheitsschloss, Bad Salzuflen</li>
+        <li>180 m² Lärchen-Dielenboden, Schieder-Schwalenberg</li>
+      </ul>
+      <p class="feature__why">
+        <strong>Warum:</strong> Wer eine Treppe sucht, kauft eher bei jemandem,
+        der schon Treppen gebaut hat. Ihre Referenzen sind die stärkste
+        Verkaufshilfe, die Sie haben — und die einzige, die Sie nicht selbst
+        schreiben müssen.
+      </p>
+    </div>
+
+    <div class="feature">
+      <p class="feature__title"><span class="feature__badge">Baustein 03</span> Materialkompetenz sichtbar machen</p>
+      <p style="margin:0 0 0.5rem;">Eine eigene Holzart-Sektion auf „Über uns":</p>
+      <ul class="bullets-tight">
+        <li>Eiche, Buche, Nussbaum, Lärche — mit Charakter-Beschreibung</li>
+        <li>Aufgewertet durch echtes Bildmaterial</li>
+        <li>Zusätzlich: ein klarer Ablauf-Stepper auf „Leistungen" (6 Schritte)</li>
+        <li>Plus FAQ-Bereich, der die häufigsten Bedenken auflöst</li>
+      </ul>
+      <p class="feature__why">
+        <strong>Warum:</strong> Sie positionieren sich als Fachmann, nicht als
+        Anbieter. Kunden wollen mit dem Experten sprechen — nicht mit dem
+        Verkäufer. Das rechtfertigt Ihre Preise.
+      </p>
+    </div>
+
+    <h2 class="email__h">Was Sie davon haben — in einer Zahl</h2>
+    <p>
+      Eine Webseite, die für Ihr Handwerk wirbt, während Sie in der Werkstatt
+      stehen. <strong>24/7 Anfragen-Akquise zum Festpreis.</strong> Kein Anzeigen­budget,
+      keine Provisionen, keine monatlich steigenden Marketing-Kosten.
+    </p>
+
+    <h2 class="email__h">Die Preise — keine Überraschungen</h2>
+    <div class="pricing">
+      <div class="pricing-row">
+        <div class="pricing-row__label">Komplette Website (jetzt 5 Seiten + Marketing-Sektionen)</div>
+        <div class="pricing-row__price">€ 590 einmalig</div>
+      </div>
+      <div class="pricing-row">
+        <div class="pricing-row__label">Hosting &amp; Domain (.de inklusive)</div>
+        <div class="pricing-row__price">€ 9,90 / Monat</div>
+      </div>
+      <div class="pricing-row">
+        <div class="pricing-row__label">Optional: Pflege &amp; Inhaltsänderungen</div>
+        <div class="pricing-row__price">€ 25 / Monat</div>
+      </div>
+      <div class="pricing-row">
+        <div class="pricing-row__label">Optional: Foto-Shooting in Ihrer Werkstatt</div>
+        <div class="pricing-row__price">€ 180 einmalig</div>
+      </div>
+      <div class="pricing-row highlight">
+        <div class="pricing-row__label">Meine Empfehlung für Sie</div>
+        <div class="pricing-row__price">€ 590 + € 9,90 / Mon.</div>
+      </div>
+    </div>
+
+    <div class="savings">
+      <div class="savings__row"><span>Agentur — Einrichtung</span><strong>€ 3.500 – 7.000</strong></div>
+      <div class="savings__row"><span>Agentur — laufend pro Monat</span><strong>€ 50 – 150</strong></div>
+      <div class="savings__row"><span>Mein Angebot — Einrichtung</span><strong>€ 590</strong></div>
+      <div class="savings__row"><span>Mein Angebot — laufend pro Monat</span><strong>€ 9,90</strong></div>
+      <div class="savings__big">Ihre Ersparnis im ersten Jahr: <strong>€ 3.400 – 7.700</strong></div>
+    </div>
+
+    <div class="disclaimer">
+      <strong>Wichtig:</strong> Das, was Sie sehen, ist <em>nur ein Vorschlag</em>.
+      Farben, Schriften, Bilder, Texte und sogar die Anordnung der Sektionen
+      werden im Auftragsfall vollständig nach Ihren Wünschen, Ihren Lieblingsfotos
+      und Ihren bevorzugten Materialien angepasst. Sie bekommen eine Webseite,
+      die zu Ihrer Werkstatt passt — nicht zu meinem Geschmack.
+    </div>
+
+    <h2 class="email__h">Der nächste Schritt — denkbar einfach</h2>
+    <p>
+      Ein 15-minütiges Telefonat reicht, um alles zu klären. Sie sagen, was Ihnen
+      gefällt, was nicht, und welche Bilder Sie verwenden möchten. Den Rest
+      mache ich.
+    </p>
+
+    <div class="cta-row">
+      <a class="demo-link" href="https://tischlerei-kosiek.vercel.app">Demo ansehen →</a>
+      <a class="demo-link demo-link--alt" href="tel:052612345678">Jetzt anrufen</a>
+      <a class="demo-link demo-link--alt" href="mailto:m.kunau@gmx.de?subject=Re%3A%20Webauftritt%20für%20die%20Tischlerei%20Kosiek">Per E-Mail antworten</a>
+    </div>
+
+    <p class="scarcity">
+      Hinweis: Mein Angebot zum genannten Preis ist drei Wochen gültig — danach
+      gelten unsere regulären Sätze.
+    </p>
+
+    <p style="margin-top:2rem;">Mit besten Grüßen aus Lemgo</p>
+
+    <div class="signature">
+      <span class="signature__name">M. Kunau</span>
+      Webentwicklung für Handwerksbetriebe<br>
+      <a href="mailto:m.kunau@gmx.de">m.kunau@gmx.de</a>
+    </div>
+  </div>
+</article>
+
+</body>
+</html>
