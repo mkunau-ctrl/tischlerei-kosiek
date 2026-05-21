@@ -10,7 +10,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Lora:wght@400;500;600&family=Cormorant+Garamond:ital,wght@1,400;1,500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body class="has-floating-cta">
+
+<div class="scroll-progress" aria-hidden="true"><div class="scroll-progress__bar"></div></div>
 
 <header class="site-header">
   <div class="container">
@@ -43,7 +45,7 @@
 
 <section>
   <div class="container">
-    <div class="contact-grid">
+    <div class="contact-grid reveal reveal--fade">
 
       <div class="contact-info">
         <h2 style="margin-bottom:var(--space-md);">So erreichen Sie uns</h2>
@@ -100,7 +102,7 @@
 
     </div>
 
-    <div class="map-wrap">
+    <div class="map-wrap reveal reveal--scale reveal--delay-1">
       <iframe
         src="https://www.openstreetmap.org/export/embed.html?bbox=8.880%2C52.020%2C8.940%2C52.060&layer=mapnik&marker=52.04%2C8.91"
         title="Karte mit Standort der Tischlerei Kosiek in Lemgo"
@@ -109,6 +111,8 @@
     </div>
   </div>
 </section>
+
+<a href="tel:0526171482" class="floating-cta">Jetzt anrufen — 05261 71482</a>
 
 <footer class="site-footer">
   <div class="container">

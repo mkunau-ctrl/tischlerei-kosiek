@@ -10,7 +10,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Lora:wght@400;500;600&family=Cormorant+Garamond:ital,wght@1,400;1,500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body class="has-floating-cta">
+
+<div class="scroll-progress" aria-hidden="true"><div class="scroll-progress__bar"></div></div>
 
 <header class="site-header">
   <div class="container">
@@ -41,7 +43,7 @@
       <img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=900&q=75" alt="">
       <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=900&q=75" alt="">
       <img src="https://images.unsplash.com/photo-1581094271901-8022df4466f9?auto=format&fit=crop&w=900&q=75" alt="">
-      <img src="https://images.unsplash.com/photo-1583845112203-29329902332e?auto=format&fit=crop&w=900&q=75" alt="">
+      <img src="https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?auto=format&fit=crop&w=900&q=75" alt="">
       <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=900&q=75" alt="">
       <img src="https://images.unsplash.com/photo-1517414204284-fb7e0e0f3a64?auto=format&fit=crop&w=900&q=75" alt="">
       <img src="https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?auto=format&fit=crop&w=900&q=75" alt="">
@@ -51,7 +53,7 @@
       <img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=900&q=75" alt="">
       <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=900&q=75" alt="">
       <img src="https://images.unsplash.com/photo-1581094271901-8022df4466f9?auto=format&fit=crop&w=900&q=75" alt="">
-      <img src="https://images.unsplash.com/photo-1583845112203-29329902332e?auto=format&fit=crop&w=900&q=75" alt="">
+      <img src="https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?auto=format&fit=crop&w=900&q=75" alt="">
       <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=900&q=75" alt="">
       <img src="https://images.unsplash.com/photo-1517414204284-fb7e0e0f3a64?auto=format&fit=crop&w=900&q=75" alt="">
       <img src="https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?auto=format&fit=crop&w=900&q=75" alt="">
@@ -68,7 +70,7 @@
 </section>
 
 <section>
-  <div class="container" style="max-width:680px;text-align:center;">
+  <div class="container reveal reveal--fade" style="max-width:680px;text-align:center;">
     <h2>Aus Trophagen für Lippe.</h2>
     <p style="font-size:1.15rem;">
       Seit Jahren steht die Tischlerei Carsten Kosiek in Lemgo für ehrliche Beratung, faire Preise und Arbeit, die hält. Vom maßgefertigten Möbelstück über Türen und Fenster bis hin zu Treppen, Böden und Trockenbau — wir sind der Tischler für Ihr Bauvorhaben in Lippe.
@@ -78,8 +80,8 @@
 
 <section style="background:var(--color-cream);">
   <div class="container">
-    <h2 style="text-align:center;margin-bottom:var(--space-lg);">Was wir für Sie tun</h2>
-    <div class="services-teaser">
+    <h2 class="reveal reveal--left" style="text-align:center;margin-bottom:var(--space-lg);">Was wir für Sie tun</h2>
+    <div class="services-teaser reveal reveal--scale">
 
       <div class="service-card">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
@@ -133,8 +135,70 @@
   </div>
 </section>
 
-<section class="quote-section">
+<section class="ablauf">
   <div class="container">
+    <h2 class="ablauf__title reveal reveal--fade">Ihr Projekt — Schritt für Schritt</h2>
+    <p class="ablauf__subtitle reveal reveal--fade reveal--delay-1">Von der ersten Anfrage bis zur Übergabe — transparent und ohne Überraschungen.</p>
+
+    <div class="card-slider reveal reveal--scale">
+      <button class="card-slider__btn card-slider__btn--prev" aria-label="Vorheriger Schritt" type="button">‹</button>
+      <div class="card-slider__viewport">
+        <div class="card-slider__track">
+
+          <article class="card-slider__card">
+            <div class="card-slider__img" style="background-image:url('https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=800&q=75');" aria-hidden="true"></div>
+            <div class="card-slider__body">
+              <span class="card-slider__step">Schritt 01</span>
+              <h3 class="card-slider__title">Erstkontakt</h3>
+              <p class="card-slider__text">Sie melden sich per Telefon, E-Mail oder kommen direkt vorbei. Wir hören zu und besprechen Ihre Idee.</p>
+            </div>
+          </article>
+
+          <article class="card-slider__card">
+            <div class="card-slider__img" style="background-image:url('https://images.unsplash.com/photo-1581783898377-1c85bf937427?auto=format&fit=crop&w=800&q=75');" aria-hidden="true"></div>
+            <div class="card-slider__body">
+              <span class="card-slider__step">Schritt 02</span>
+              <h3 class="card-slider__title">Aufmaß & Beratung</h3>
+              <p class="card-slider__text">Wir kommen zu Ihnen, nehmen genaue Maße und beraten Sie zu Material, Konstruktion und Möglichkeiten.</p>
+            </div>
+          </article>
+
+          <article class="card-slider__card">
+            <div class="card-slider__img" style="background-image:url('https://images.unsplash.com/photo-1452860606245-08befc0ff44b?auto=format&fit=crop&w=800&q=75');" aria-hidden="true"></div>
+            <div class="card-slider__body">
+              <span class="card-slider__step">Schritt 03</span>
+              <h3 class="card-slider__title">Angebot</h3>
+              <p class="card-slider__text">Detailliertes, schriftliches Angebot — transparent kalkuliert, ohne versteckte Posten oder Folgekosten.</p>
+            </div>
+          </article>
+
+          <article class="card-slider__card">
+            <div class="card-slider__img" style="background-image:url('https://images.unsplash.com/photo-1572297886461-e3b22f6a18cf?auto=format&fit=crop&w=800&q=75');" aria-hidden="true"></div>
+            <div class="card-slider__body">
+              <span class="card-slider__step">Schritt 04</span>
+              <h3 class="card-slider__title">Fertigung</h3>
+              <p class="card-slider__text">Wir fertigen in unserer Werkstatt in Lemgo-Trophagen. Sie können jederzeit vorbeischauen.</p>
+            </div>
+          </article>
+
+          <article class="card-slider__card">
+            <div class="card-slider__img" style="background-image:url('https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=800&q=75');" aria-hidden="true"></div>
+            <div class="card-slider__body">
+              <span class="card-slider__step">Schritt 05</span>
+              <h3 class="card-slider__title">Montage</h3>
+              <p class="card-slider__text">Termingerechter Einbau bei Ihnen vor Ort. Sauber, präzise und mit der nötigen Sorgfalt.</p>
+            </div>
+          </article>
+
+        </div>
+      </div>
+      <button class="card-slider__btn card-slider__btn--next" aria-label="Nächster Schritt" type="button">›</button>
+    </div>
+  </div>
+</section>
+
+<section class="quote-section">
+  <div class="container reveal reveal--fade">
     <p class="stars">★ ★ ★ ★ ★</p>
     <blockquote>„Bei meinem Bau wurde eine Top Arbeit geleistet."</blockquote>
     <p style="opacity:0.7;margin-top:var(--space-sm);">— Kundenbewertung</p>
@@ -142,12 +206,14 @@
 </section>
 
 <section class="mini-cta">
-  <div class="container">
+  <div class="container reveal reveal--right">
     <h2>Sprechen Sie mit uns.</h2>
     <p>Wir nehmen uns Zeit für Ihr Vorhaben.</p>
     <a href="tel:0526171482" class="phone">05261 71482</a>
   </div>
 </section>
+
+<a href="kontakt.html" class="floating-cta">Angebot anfragen</a>
 
 <footer class="site-footer">
   <div class="container">

@@ -10,7 +10,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Lora:wght@400;500;600&family=Cormorant+Garamond:ital,wght@1,400;1,500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body class="has-floating-cta">
+
+<div class="scroll-progress" aria-hidden="true"><div class="scroll-progress__bar"></div></div>
 
 <header class="site-header">
   <div class="container">
@@ -51,7 +53,7 @@
       <button class="filter-btn" data-category="boeden">Böden</button>
     </div>
 
-    <div class="gallery-grid">
+    <div class="gallery-grid reveal reveal--fade">
       <div class="gallery-item" data-category="moebel"><img src="https://images.unsplash.com/photo-1538688525198-9b88f6f53126?auto=format&fit=crop&w=800&q=70" alt="Einbauschrank"></div>
       <div class="gallery-item" data-category="treppen"><img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=800&q=70" alt="Holztreppe"></div>
       <div class="gallery-item" data-category="tueren"><img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=800&q=70" alt="Eingangstür"></div>
@@ -67,6 +69,8 @@
     </div>
   </div>
 </section>
+
+<a href="kontakt.html" class="floating-cta">Angebot anfragen</a>
 
 <div class="lightbox" role="dialog" aria-modal="true" aria-label="Bildvergrößerung">
   <button class="lb-close" aria-label="Schließen">×</button>
