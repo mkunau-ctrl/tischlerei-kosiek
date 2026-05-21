@@ -2,17 +2,6 @@
 (function () {
   'use strict';
 
-  // ---- Hero-Slideshow (cross-fade + Ken Burns) ----
-  const heroSlides = document.querySelectorAll('.hero-slide');
-  if (heroSlides.length > 1) {
-    let activeIdx = 0;
-    setInterval(() => {
-      heroSlides[activeIdx].classList.remove('active');
-      activeIdx = (activeIdx + 1) % heroSlides.length;
-      heroSlides[activeIdx].classList.add('active');
-    }, 6000);
-  }
-
   // ---- Mobile Menu ----
   const toggle = document.querySelector('.menu-toggle');
   const nav = document.querySelector('.main-nav');
