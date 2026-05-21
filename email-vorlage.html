@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>E-Mail-Vorlage — Webauftritt für die Tischlerei Kosiek</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lora:wght@400;500;600&family=Cormorant+Garamond:ital,wght@1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --c-text:  #2d1f15;
+      --c-wood:  #8b5a2b;
+      --c-wood-light: #c9a87a;
+      --c-cream: #f5ede0;
+      --c-bg:    #ece8df;
+      --c-paper: #fff;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      padding: 40px 16px 80px;
+      background: var(--c-bg);
+      font-family: 'Lora', Georgia, serif;
+      color: var(--c-text);
+      line-height: 1.7;
+    }
+    .doc-header {
+      max-width: 720px;
+      margin: 0 auto 24px;
+      text-align: center;
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-style: italic;
+      color: #6b554a;
+      font-size: 1.05rem;
+    }
+    .email {
+      max-width: 720px;
+      margin: 0 auto;
+      background: var(--c-paper);
+      border: 2px solid var(--c-text);
+      box-shadow: 10px 10px 0 var(--c-wood);
+    }
+    .email__meta {
+      background: var(--c-text);
+      color: var(--c-cream);
+      padding: 1.25rem 2rem;
+      font-size: 0.92rem;
+      font-family: 'Lora', monospace, serif;
+      border-bottom: 2px solid var(--c-text);
+    }
+    .email__meta-row { margin-bottom: 0.3rem; display: flex; gap: 0.75rem; }
+    .email__meta-row:last-child { margin-bottom: 0; }
+    .email__meta-label {
+      color: var(--c-wood-light);
+      flex: 0 0 64px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-size: 0.78rem;
+      padding-top: 4px;
+    }
+    .email__meta-value { flex: 1; word-break: break-all; }
+    .email__body {
+      padding: 2.5rem 2.5rem 2rem;
+    }
+    .email__body p { margin: 0 0 1rem; }
+    .email__h {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.35rem;
+      margin: 1.75rem 0 1rem;
+      color: var(--c-text);
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid var(--c-wood-light);
+    }
+    .demo-link {
+      display: inline-block;
+      background: var(--c-wood);
+      color: #fff;
+      padding: 0.75rem 1.5rem;
+      text-decoration: none;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      border: 2px solid var(--c-text);
+      box-shadow: 4px 4px 0 var(--c-text);
+      margin: 0.5rem 0 1rem;
+      transition: transform .2s, box-shadow .2s;
+    }
+    .demo-link:hover {
+      transform: translate(-2px, -2px);
+      box-shadow: 6px 6px 0 var(--c-text);
+    }
+    .demo-note {
+      background: var(--c-cream);
+      border: 2px dashed var(--c-wood-light);
+      padding: 1rem 1.25rem;
+      margin: 1.25rem 0;
+      font-size: 0.95rem;
+      color: #4a3a2f;
+    }
+    .demo-note strong { color: var(--c-text); }
+    ul.bullets {
+      margin: 0 0 1.25rem;
+      padding-left: 1.5rem;
+    }
+    ul.bullets li { margin-bottom: 0.5rem; }
+    .pricing {
+      margin: 1.25rem 0 1.5rem;
+      border: 2px solid var(--c-text);
+      box-shadow: 4px 4px 0 var(--c-wood);
+    }
+    .pricing-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      padding: 0.8rem 1.25rem;
+      border-bottom: 1px solid var(--c-wood-light);
+      gap: 1rem;
+    }
+    .pricing-row:last-child { border-bottom: 0; }
+    .pricing-row.highlight {
+      background: var(--c-cream);
+      font-weight: 700;
+      border-top: 2px solid var(--c-text);
+    }
+    .pricing-row__label { flex: 1; }
+    .pricing-row__price {
+      color: var(--c-wood);
+      font-weight: 600;
+      white-space: nowrap;
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.05rem;
+    }
+    .comparison {
+      background: #faf6ee;
+      padding: 1rem 1.25rem;
+      margin: 1.25rem 0 1.5rem;
+      border-left: 4px solid var(--c-wood);
+      font-style: italic;
+      color: #4a3a2f;
+      font-size: 0.95rem;
+    }
+    .comparison strong { color: var(--c-text); font-style: normal; }
+    .signature {
+      margin-top: 2rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--c-wood-light);
+      color: #4a3a2f;
+      font-size: 0.95rem;
+    }
+    .signature__name {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.2rem;
+      color: var(--c-text);
+      display: block;
+      margin-bottom: 0.25rem;
+    }
+    .signature a { color: var(--c-wood); }
+    @media (max-width: 640px) {
+      body { padding: 20px 12px 40px; }
+      .email__body { padding: 1.75rem 1.25rem 1.5rem; }
+      .email__meta { padding: 1rem 1.25rem; font-size: 0.85rem; }
+      .pricing-row { flex-direction: column; gap: 0.25rem; }
+      .pricing-row__price { font-size: 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+<p class="doc-header">Vorlage — kann frei in jedem E-Mail-Client kopiert werden.</p>
+
+<article class="email">
+  <header class="email__meta">
+    <div class="email__meta-row">
+      <span class="email__meta-label">An</span>
+      <span class="email__meta-value">bautischlerei-kosiek@t-online.de</span>
+    </div>
+    <div class="email__meta-row">
+      <span class="email__meta-label">Von</span>
+      <span class="email__meta-value">m.kunau@gmx.de</span>
+    </div>
+    <div class="email__meta-row">
+      <span class="email__meta-label">Betreff</span>
+      <span class="email__meta-value">Webauftritt für die Tischlerei Kosiek — unverbindlicher Vorschlag</span>
+    </div>
+  </header>
+
+  <div class="email__body">
+    <p>Sehr geehrter Herr Kosiek,</p>
+
+    <p>mein Name ist M. Kunau. Ich entwickle Websites für Handwerksbetriebe in
+    Lippe und Umgebung — und habe für Ihre Tischlerei als unverbindliche
+    Demonstration bereits einen kompletten Webauftritt entworfen. Schauen Sie
+    sich den Entwurf gern direkt an:</p>
+
+    <p>
+      <a class="demo-link" href="https://tischlerei-kosiek.vercel.app">
+        Demo-Webseite ansehen →
+      </a>
+    </p>
+
+    <p>Was Sie sehen, sind fünf vollwertige Seiten (Start, Leistungen, Über uns,
+    Galerie und Kontakt) — mobil optimiert, mit eingebundener Karte und einem
+    Kontaktformular, das direkt auf Ihre E-Mail-Adresse läuft.</p>
+
+    <div class="demo-note">
+      <strong>Wichtiger Hinweis:</strong> Was Sie jetzt sehen, ist nur ein erster
+      Entwurf zur Veranschaulichung. Farben, Schriften, Bilder und Texte werden im
+      Auftragsfall vollständig nach Ihren Wünschen, Ihren Lieblingsfotos und Ihren
+      bevorzugten Materialien angepasst — alles, was Ihnen jetzt nicht gefällt,
+      wird selbstverständlich geändert.
+    </div>
+
+    <h2 class="email__h">Warum mein Angebot deutlich günstiger ist</h2>
+    <ul class="bullets">
+      <li>Ich arbeite alleine — kein Vertrieb, kein Projektleiter, kein Agentur-Büro.</li>
+      <li>Sie sprechen direkt mit demjenigen, der die Arbeit auch macht.</li>
+      <li>Kein Aufschlag für Marketing, Show-Office oder Zwischenebenen.</li>
+      <li>Schnelle Reaktionszeiten — meistens noch am selben Tag.</li>
+    </ul>
+
+    <h2 class="email__h">Transparente Preise — kein Kleingedrucktes</h2>
+    <div class="pricing">
+      <div class="pricing-row">
+        <div class="pricing-row__label">Komplette Website (5 Seiten, mobil, Kontaktformular)</div>
+        <div class="pricing-row__price">€ 590 einmalig</div>
+      </div>
+      <div class="pricing-row">
+        <div class="pricing-row__label">Hosting &amp; Domain (.de inklusive)</div>
+        <div class="pricing-row__price">€ 9,90 / Monat</div>
+      </div>
+      <div class="pricing-row">
+        <div class="pricing-row__label">Optional: Pflege &amp; Inhaltsänderungen</div>
+        <div class="pricing-row__price">€ 25 / Monat</div>
+      </div>
+      <div class="pricing-row">
+        <div class="pricing-row__label">Optional: Foto-Shooting in Ihrer Werkstatt</div>
+        <div class="pricing-row__price">€ 180 einmalig</div>
+      </div>
+      <div class="pricing-row highlight">
+        <div class="pricing-row__label">Empfehlung für Sie</div>
+        <div class="pricing-row__price">€ 590 + € 9,90/Mon.</div>
+      </div>
+    </div>
+
+    <div class="comparison">
+      <strong>Zum Vergleich:</strong> Eine Werbeagentur berechnet für einen
+      vergleichbaren Webauftritt in der Regel zwischen € 3.500 und € 7.000
+      einmalig, plus € 50,— bis € 150,— monatlich für Wartung und Hosting.
+      Sie sparen mit mir also schon im ersten Jahr mehrere tausend Euro.
+    </div>
+
+    <p>Wenn Sie sich vorstellen können, gemeinsam einen modernen Webauftritt für
+    die Tischlerei Kosiek einzurichten — oder einfach Fragen zum Vorschlag haben
+    — melden Sie sich gern. Ein kurzes Telefonat oder eine kurze Antwort auf
+    diese E-Mail genügen.</p>
+
+    <p>Mit besten Grüßen aus Lemgo</p>
+
+    <div class="signature">
+      <span class="signature__name">M. Kunau</span>
+      Webentwicklung für Handwerksbetriebe<br>
+      <a href="mailto:m.kunau@gmx.de">m.kunau@gmx.de</a>
+    </div>
+  </div>
+</article>
+
+</body>
+</html>
