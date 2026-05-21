@@ -10,7 +10,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Lora:wght@400;500;600&family=Cormorant+Garamond:ital,wght@1,400;1,500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body class="has-floating-cta">
+
+<div class="scroll-progress" aria-hidden="true"><div class="scroll-progress__bar"></div></div>
 
 <header class="site-header">
   <div class="container">
@@ -43,7 +45,7 @@
 
 <section>
   <div class="container">
-    <div class="services-grid">
+    <div class="services-grid reveal reveal--fade">
 
       <div class="service-block">
         <div class="icon-wrap">
@@ -130,12 +132,14 @@
 </section>
 
 <section class="mini-cta">
-  <div class="container">
+  <div class="container reveal reveal--scale">
     <h2>Ihr Projekt nicht dabei?</h2>
     <p>Sprechen Sie uns an — wir finden eine Lösung.</p>
     <a href="kontakt.html" class="btn" style="margin-top:var(--space-md);">Anfrage senden</a>
   </div>
 </section>
+
+<a href="kontakt.html" class="floating-cta">Angebot anfragen</a>
 
 <footer class="site-footer">
   <div class="container">

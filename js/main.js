@@ -2,6 +2,62 @@
 (function () {
   'use strict';
 
+  // ---- Scroll-Progress-Balken ----
+  const progressBar = document.querySelector('.scroll-progress__bar');
+  if (progressBar) {
+    const updateProgress = () => {
+      const docH = document.documentElement.scrollHeight - window.innerHeight;
+      const pct = docH > 0 ? (window.scrollY / docH) * 100 : 0;
+      progressBar.style.width = Math.min(Math.max(pct, 0), 100) + '%';
+    };
+    window.addEventListener('scroll', updateProgress, { passive: true });
+    window.addEventListener('resize', updateProgress);
+    updateProgress();
+  }
+
+  // ---- Reveal on scroll (per-section animation) ----
+  const revealEls = document.querySelectorAll('.reveal');
+  if (revealEls.length && 'IntersectionObserver' in window) {
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          obs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+    revealEls.forEach((el) => obs.observe(el));
+  } else {
+    revealEls.forEach((el) => el.classList.add('is-visible'));
+  }
+
+  // ---- Card-Slider (Pfeile + Snap) ----
+  document.querySelectorAll('.card-slider').forEach((slider) => {
+    const viewport = slider.querySelector('.card-slider__viewport');
+    const prev = slider.querySelector('.card-slider__btn--prev');
+    const next = slider.querySelector('.card-slider__btn--next');
+    const firstCard = slider.querySelector('.card-slider__card');
+    if (!viewport || !prev || !next || !firstCard) return;
+
+    const step = () => {
+      const cardW = firstCard.getBoundingClientRect().width;
+      const trackGap = parseInt(getComputedStyle(slider).getPropertyValue('--cs-gap')) || 24;
+      return cardW + trackGap;
+    };
+
+    const updateBtns = () => {
+      const max = viewport.scrollWidth - viewport.clientWidth - 1;
+      prev.disabled = viewport.scrollLeft <= 1;
+      next.disabled = viewport.scrollLeft >= max;
+    };
+
+    prev.addEventListener('click', () => viewport.scrollBy({ left: -step(), behavior: 'smooth' }));
+    next.addEventListener('click', () => viewport.scrollBy({ left:  step(), behavior: 'smooth' }));
+    viewport.addEventListener('scroll', updateBtns, { passive: true });
+    window.addEventListener('resize', updateBtns);
+    updateBtns();
+  });
+
   // ---- Mobile Menu ----
   const toggle = document.querySelector('.menu-toggle');
   const nav = document.querySelector('.main-nav');

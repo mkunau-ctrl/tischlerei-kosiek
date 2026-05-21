@@ -652,4 +652,252 @@ section { padding: var(--space-xl) 0; }
 
 @media (prefers-reduced-motion: reduce) {
   .marquee-hero .marquee-track { animation: none; transform: translateX(-25%); }
+  .reveal { opacity: 1 !important; transform: none !important; }
+}
+
+/* ============================================================
+   ↓↓↓ ISOLIERTE KOMPONENTEN ↓↓↓
+   Jede Komponente unten ist self-contained:
+   - eigener BEM-Namespace
+   - lokale CSS-Variablen am Block-Anfang
+   - keine Selektoren außerhalb des eigenen Namespace
+   Änderungen hier brechen den Rest der Seite NICHT auf.
+   ============================================================ */
+
+/* -------- Scroll-Progress-Balken (oben) -------- */
+.scroll-progress {
+  --sp-height: 4px;
+  --sp-track:  rgba(45, 31, 21, 0.10);
+  --sp-fill:   #8b5a2b;
+  --sp-z:      101;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--sp-height);
+  background: var(--sp-track);
+  z-index: var(--sp-z);
+  pointer-events: none;
+}
+.scroll-progress__bar {
+  height: 100%;
+  width: 0;
+  background: var(--sp-fill);
+  transition: width 0.08s linear;
+  will-change: width;
+}
+
+/* -------- Sticky CTA (unten) -------- */
+.floating-cta {
+  --fcta-bg:     #8b5a2b;
+  --fcta-bg-hover:#1a1410;
+  --fcta-color: #fff;
+  --fcta-h:     56px;
+  --fcta-z:     50;
+
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: var(--fcta-z);
+  background: var(--fcta-bg);
+  color: var(--fcta-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: var(--fcta-h);
+  font-family: 'Lora', Georgia, serif;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-size: 0.92rem;
+  border-top: 2px solid #1a1410;
+  text-decoration: none;
+  transition: background .2s, color .2s, letter-spacing .2s;
+}
+.floating-cta:hover {
+  background: var(--fcta-bg-hover);
+  color: #f5ede0;
+  letter-spacing: 0.25em;
+}
+body.has-floating-cta { padding-bottom: 56px; }
+
+/* -------- Reveal-on-scroll Utility -------- */
+.reveal {
+  --rv-duration: 0.85s;
+  --rv-ease:     cubic-bezier(.22,.61,.36,1);
+  --rv-y:        40px;
+  --rv-x:        60px;
+  --rv-scale:    0.92;
+
+  opacity: 0;
+  transition:
+    opacity var(--rv-duration) var(--rv-ease),
+    transform var(--rv-duration) var(--rv-ease);
+  transform: translateY(var(--rv-y));
+  will-change: opacity, transform;
+}
+.reveal.is-visible { opacity: 1; transform: none; }
+.reveal--left  { transform: translateX(calc(-1 * var(--rv-x))); }
+.reveal--right { transform: translateX(var(--rv-x)); }
+.reveal--scale { transform: scale(var(--rv-scale)); }
+.reveal--fade  { transform: none; }
+.reveal--delay-1 { transition-delay: .12s; }
+.reveal--delay-2 { transition-delay: .24s; }
+.reveal--delay-3 { transition-delay: .36s; }
+
+/* -------- Card-Slider (mit Pfeilen) -------- */
+.card-slider {
+  --cs-card-w:        320px;
+  --cs-card-h-img:    220px;
+  --cs-gap:           1.5rem;
+  --cs-btn-size:      52px;
+  --cs-btn-bg:        #fff;
+  --cs-btn-border:    #2d1f15;
+  --cs-btn-shadow:    #8b5a2b;
+  --cs-card-bg:       #fff;
+  --cs-card-border:   #2d1f15;
+  --cs-card-shadow:   #8b5a2b;
+  --cs-step-color:    #8b5a2b;
+
+  position: relative;
+  margin-top: 2rem;
+}
+.card-slider__viewport {
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  scroll-behavior: smooth;
+}
+.card-slider__viewport::-webkit-scrollbar { display: none; }
+.card-slider__track {
+  display: flex;
+  gap: var(--cs-gap);
+  padding: 1rem 0.5rem 1.5rem;
+}
+.card-slider__card {
+  flex: 0 0 var(--cs-card-w);
+  max-width: var(--cs-card-w);
+  scroll-snap-align: start;
+  background: var(--cs-card-bg);
+  border: 2px solid var(--cs-card-border);
+  box-shadow: 6px 6px 0 var(--cs-card-shadow);
+  display: flex;
+  flex-direction: column;
+  transition: transform .2s, box-shadow .2s;
+}
+.card-slider__card:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: 9px 9px 0 var(--cs-card-shadow);
+}
+.card-slider__img {
+  width: 100%;
+  height: var(--cs-card-h-img);
+  background-size: cover;
+  background-position: center;
+  border-bottom: 2px solid var(--cs-card-border);
+}
+.card-slider__body {
+  padding: 1.5rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.card-slider__step {
+  display: inline-block;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: var(--cs-step-color);
+  letter-spacing: 0.2em;
+  margin-bottom: 0.5rem;
+}
+.card-slider__title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.4rem;
+  margin-bottom: 0.6rem;
+  color: #2d1f15;
+}
+.card-slider__text {
+  color: #2d1f15;
+  font-size: 0.97rem;
+  line-height: 1.55;
+}
+.card-slider__btn {
+  position: absolute;
+  top: calc(var(--cs-card-h-img) / 2 + 1rem);
+  transform: translateY(-50%);
+  width: var(--cs-btn-size);
+  height: var(--cs-btn-size);
+  background: var(--cs-btn-bg);
+  border: 2px solid var(--cs-btn-border);
+  border-radius: 50%;
+  font-size: 1.6rem;
+  line-height: 1;
+  color: var(--cs-btn-border);
+  z-index: 5;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 4px 4px 0 var(--cs-btn-shadow);
+  transition: background .2s, color .2s, transform .2s, box-shadow .2s;
+  font-family: 'Playfair Display', Georgia, serif;
+  padding: 0;
+}
+.card-slider__btn:hover {
+  background: var(--cs-btn-shadow);
+  color: #fff;
+  transform: translateY(-50%) translate(-2px, -2px);
+  box-shadow: 6px 6px 0 var(--cs-btn-border);
+}
+.card-slider__btn--prev { left: -12px; }
+.card-slider__btn--next { right: -12px; }
+.card-slider__btn[disabled] { opacity: 0.3; cursor: default; pointer-events: none; }
+
+/* -------- Section „Ablauf" (dunkler Hintergrund + Slider) -------- */
+.ablauf {
+  --ab-bg:       #1a1410;
+  --ab-color:    #f5ede0;
+  --ab-accent:   #8b5a2b;
+  --ab-border:   4px solid #8b5a2b;
+
+  background: var(--ab-bg);
+  color: var(--ab-color);
+  border-top: var(--ab-border);
+  border-bottom: var(--ab-border);
+  padding: 5rem 0;
+  overflow: hidden;
+}
+.ablauf__title {
+  color: #fff;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+.ablauf__subtitle {
+  text-align: center;
+  color: var(--ab-color);
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-style: italic;
+  font-size: 1.2rem;
+  max-width: 640px;
+  margin: 0 auto 2rem;
+}
+.ablauf .card-slider {
+  --cs-card-bg:     #fafaf7;
+  --cs-card-shadow: #8b5a2b;
+  --cs-btn-shadow:  #f5ede0;
+}
+
+/* -------- Responsive für isolierte Komponenten -------- */
+@media (max-width: 900px) {
+  .card-slider { --cs-card-w: 280px; --cs-card-h-img: 180px; }
+}
+@media (max-width: 640px) {
+  .card-slider { --cs-card-w: 240px; --cs-card-h-img: 160px; }
+  .card-slider__btn--prev { left: 4px; }
+  .card-slider__btn--next { right: 4px; }
+  .floating-cta { font-size: 0.82rem; letter-spacing: 0.15em; }
 }

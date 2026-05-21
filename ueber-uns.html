@@ -10,7 +10,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Lora:wght@400;500;600&family=Cormorant+Garamond:ital,wght@1,400;1,500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body class="has-floating-cta">
+
+<div class="scroll-progress" aria-hidden="true"><div class="scroll-progress__bar"></div></div>
 
 <header class="site-header">
   <div class="container">
@@ -34,7 +36,7 @@
   </div>
 </header>
 
-<section class="page-hero" style="background-image:url('https://images.unsplash.com/photo-1597762470488-3877b1f538c6?auto=format&fit=crop&w=1600&q=75')">
+<section class="page-hero" style="background-image:url('https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?auto=format&fit=crop&w=1600&q=75')">
   <div class="container">
     <h1>Über uns</h1>
     <p>Tischlerei mit Wurzeln in Lemgo — Bautischler aus Überzeugung.</p>
@@ -43,8 +45,8 @@
 
 <section>
   <div class="container">
-    <div class="portrait-section">
-      <img src="https://images.unsplash.com/photo-1597762470488-3877b1f538c6?auto=format&fit=crop&w=900&q=70" alt="Tischler in Werkstatt">
+    <div class="portrait-section reveal reveal--left">
+      <img src="https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?auto=format&fit=crop&w=900&q=70" alt="Tischler bei der Arbeit">
       <div>
         <h2>Aus Trophagen heraus.</h2>
         <p style="margin-bottom:var(--space-sm);">
@@ -63,8 +65,8 @@
 
 <section style="background:var(--color-cream);">
   <div class="container">
-    <h2 style="text-align:center;margin-bottom:var(--space-lg);">Was uns wichtig ist</h2>
-    <div class="values-grid">
+    <h2 class="reveal reveal--fade" style="text-align:center;margin-bottom:var(--space-lg);">Was uns wichtig ist</h2>
+    <div class="values-grid reveal reveal--scale">
 
       <div class="value-card">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9 12l2 2 4-4"/></svg>
@@ -90,17 +92,19 @@
 
 <section>
   <div class="container">
-    <h2 style="text-align:center;">Unsere Werkstatt</h2>
-    <p style="text-align:center;max-width:680px;margin:0 auto;">
+    <h2 class="reveal reveal--right" style="text-align:center;">Unsere Werkstatt</h2>
+    <p class="reveal reveal--fade reveal--delay-1" style="text-align:center;max-width:680px;margin:0 auto;">
       Eingerichtet für saubere Bautischler-Arbeit: Hobelmaschinen, Sägen, Pressen, ein Lager mit ausgesuchten Hölzern — und der Platz, um auch große Bauteile vorzufertigen.
     </p>
-    <div class="gallery-trio">
+    <div class="gallery-trio reveal reveal--scale reveal--delay-2">
       <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=600&q=70" alt="Werkstatt-Eindruck">
       <img src="https://images.unsplash.com/photo-1581783898377-1c85bf937427?auto=format&fit=crop&w=600&q=70" alt="Werkzeug">
       <img src="https://images.unsplash.com/photo-1572297886461-e3b22f6a18cf?auto=format&fit=crop&w=600&q=70" alt="Holzlager">
     </div>
   </div>
 </section>
+
+<a href="kontakt.html" class="floating-cta">Angebot anfragen</a>
 
 <footer class="site-footer">
   <div class="container">
